@@ -16,7 +16,7 @@
 		<div id="header_left" class="left_content">
 			<h1><a href="<?php Site::out_url( 'habari' ); ?>"><?php Options::out( 'title' ); ?> <span>| <?php Options::out( 'tagline' ); ?></span></a></h1>
 			<div id="header_image">
-				<a href="<?php Site::out_url( 'habari' ); ?>"><img src="<?php Site::out_url( 'theme' ); ?>/headers/<?php $theme->header_image(); ?>" alt="<?php Options::out( 'title' ); ?>"></a>
+				<a href="<?php Site::out_url( 'habari' ); ?>"><img src="<?php Site::out_url( 'theme' ); ?>/headers/<?php echo $theme->header_image(); ?>" alt="<?php Options::out( 'title' ); ?>"></a>
 			</div>
 		</div>
 		<div id="header_right" class="right_content">

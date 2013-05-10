@@ -41,28 +41,28 @@ class Aligned extends Theme
 		}
 		return $return;
 	}
-	
+
 	public function theme_header_image()
 	{
 		$imglist = '';
-		
+
 		mt_srand((double)microtime()*1000);
-		
+
 		$imgs = dir(Site::get_dir('theme')."/headers/");
-		
+
 		while ($file = $imgs->read()) {
-			if (eregi("gif", $file) || eregi("jpg", $file) || eregi("png", $file))
+			if ( preg_match( "/gif$/i", $file ) || preg_match( "/jpg$/i", $file ) || preg_match( "/png$/", $file ) )
 			$imglist .= "$file ";
 		} closedir($imgs->handle);
-		
+
 		$imglist = explode(" ", $imglist);
 		$no = sizeof($imglist)-2;
 		$random = mt_rand(0, $no);
-		
+
 		return $imglist[$random];
 	}
 
-	public function action_form_comment( $form ) { 
+	public function action_form_comment( $form ) {
 		$form->cf_commenter->caption = 'Name';
 		$form->cf_email->caption = 'Mail';
 		$form->cf_url->caption = 'Website';

@@ -51,7 +51,7 @@ class Aligned extends Theme
 		$imgs = dir(Site::get_dir('theme')."/headers/");
 
 		while ($file = $imgs->read()) {
-			if ( preg_match( "/gif$/i", $file ) || preg_match( "/jpg$/i", $file ) || preg_match( "/png$/", $file ) )
+			if ( preg_match( "/(gif|jpe?g|png)$/i", $file ) )
 			$imglist .= "$file ";
 		} closedir($imgs->handle);
 

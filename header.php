@@ -7,7 +7,7 @@
 
 <link rel="stylesheet" type="text/css" media="screen" href="<?php Site::out_url( 'theme' ); ?>/style.css">
 
-<?php $theme->header(); ?>
+<?php echo $theme->header(); ?>
 </head>
 
 <body>
